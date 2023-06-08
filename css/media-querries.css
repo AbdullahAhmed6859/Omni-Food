@@ -2,20 +2,19 @@
 1 rem here = 1 em = 16px 
 use em in media querries */
 
-
 /* 1350px  Small PCs*/
 @media (max-width: 84.375em) {
-    .hero {
-      max-width: 120rem;
-    }
+  .hero {
+    max-width: 120rem;
+  }
 
-    .heading-primary {
-      font-size: 4.4rem;
-    }
+  .heading-primary {
+    font-size: 4.4rem;
+  }
 
-    .gallery {
-      grid-template-columns: repeat(2, 1fr);
-    }
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* 1200px  (Small Landscape Tablets)*/
@@ -36,7 +35,7 @@ use em in media querries */
 
   .heading-tertiary {
     font-size: 2.4rem;
-  }  
+  }
 
   .header-section {
     padding: 0 3.2rem;
@@ -56,10 +55,61 @@ use em in media querries */
 }
 
 /* 940px (Potrait Tablets) */
-@media(max-width: 58.75em) {
+@media (max-width: 58.75em) {
   html {
     font-size: 50%;
   }
+
+  .btn-mobile-nav {
+    display: block;
+  }
+
+  .main-nav {
+    background-color: rgba(255, 255, 255, 0.95);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: translateX(100%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.5s ease-in-out;
+
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0);
+  }
+
+  .nav-open .icon-mobile-nav[name="close-outline"] {
+    display: block;
+  }
+
+  .nav-open .icon-mobile-nav[name="menu-outline"] {
+    display: none;
+  }
+
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+  }
+
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 3rem;
+  }
+
+  /* .main-nav-list {
+    display: none;
+  } */
 
   .hero {
     grid-template-columns: 1fr;
@@ -67,7 +117,8 @@ use em in media querries */
     gap: 6.4rem;
   }
 
-  .hero-text-box, .hero-img-box {
+  .hero-text-box,
+  .hero-img-box {
     text-align: center;
   }
 
@@ -109,6 +160,42 @@ use em in media querries */
   }
 
   .btn--form {
-    margin-top: 1.2rem
+    margin-top: 1.2rem;
   }
+}
+
+/* 700px (Smaller Tablets) */
+@media (max-width: 43.75em) {
+  .grid--3-cols, .grid--4-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .diets {
+    grid-column: 1/-1;
+    justify-self: center;
+  }
+
+  .heading-secondary {
+    margin-bottom: 4.8rem;
+  }
+
+  .pricing-plan {
+    width: 100%;
+  }
+
+  .grid--footer {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .nav-col {
+    grid-row: 1;
+    grid-column: span 2;
+    margin-bottom: 3.2rem;
+  }
+
+  .logo-col, .address-col {
+    grid-column: span 3;
+  }
+
+
 }
